@@ -1,0 +1,36 @@
+<div class="pageMainTitle">
+     <h3>
+         Profiles
+     </h3>
+</div>
+<div class="profile-details-page">
+     <div class="left">
+          <div class="box-header">
+               <a href="javascript:;">
+                    <i class="zmdi zmdi-chevron-left"></i>
+                    <span>Back to Profiles</span>
+               </a>
+               <div class="user-details">
+                    <div class="info">
+                         <h3>Edit Profile</h3>
+                    </div>
+               </div>
+          </div>
+          <div class="box-side-menu">
+               <ul class="list-unstyled">
+                    <li [routerLink]="['/admin/setup/profiles-details/general']" routerLinkActive="active">
+                         <a href="javascript:;">General</a>
+                    </li>
+                    <li [routerLink]="['/admin/setup/profiles-details/users']" routerLinkActive="active">
+                         <a href="javascript:;">Users</a>
+                    </li>
+                    <li [routerLink]="['/admin/setup/profiles-details/privilages']" routerLinkActive="active">
+                         <a href="javascript:;">User Privilages</a>
+                    </li>
+               </ul>
+          </div>
+     </div>
+     <div class="right">
+          <router-outlet></router-outlet>
+     </div>
+</div>

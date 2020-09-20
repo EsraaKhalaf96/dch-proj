@@ -1,0 +1,55 @@
+<div class="main-div {{smallLeftBarClass}}">
+
+    <!-- Left Sidebar -->
+    <app-left-sidebar></app-left-sidebar>
+
+    <section class="content">
+        <header>
+            <div class="left">
+                <!-- <h3>Account Settings</h3> -->
+            </div>
+            <div class="right">
+                <p class="date-time">{{todayDate | date: 'full'}}</p>
+                <p class="help">
+                    <i class="zmdi zmdi-help-outline"></i>
+                </p>
+                <p class="notification">
+                    <i class="zmdi zmdi-notifications"></i>
+                    <span></span>
+                </p>
+                <ul class="list-unstyled">
+                    <li class="dropdown" ngbDropdown>
+                        <a href="javascript:void(0);" ngbDropdownToggle class="dropdown-toggle" data-toggle="dropdown"
+                            role="button">
+                            <span class="user-shortName">
+                                {{userShortName}}
+                            </span>
+                            {{userDisplayName}}
+                            <i class="zmdi zmdi-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown-menu slideUp" ngbDropdownMenu>
+                            <li class="body">
+                                <ul class="menu list-unstyled">
+                                    <li>
+                                        <a href="javascript:void(0);">
+                                            <i class="zmdi zmdi-account-box"></i>
+                                            Profile
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);" (click)="Logout()">
+                                            <i class="zmdi zmdi-close"></i>
+                                            Logout
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </header>
+        <router-outlet></router-outlet>
+    </section>
+
+</div>

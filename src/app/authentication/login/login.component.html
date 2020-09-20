@@ -1,0 +1,61 @@
+<div class="login-page">
+     <div class="p-overlay"></div>
+     <div class="container-fluid">
+          <div class="row">
+               <!-- <div class="col-md-6 col-sm-6">
+                    <div class="left">
+                         <h4>Welcome To</h4>
+                         <h2>Dispute Clearing House</h2>
+                    </div>
+               </div> -->
+               <div class="col-md-12 col-sm-12">
+                    <div class="right">
+                         <div class="dch-logo-box">
+                              <img src="assets/images/logo.png" />
+                              DCH
+                         </div>
+                         <div class="login-box">
+                              <div class="box-header">
+                                   <h3>Login to your account</h3>
+                              </div>
+                              <form [formGroup]="formObject" (ngSubmit)="Login()">
+                                   <div class="alert alert-danger" *ngIf="showServerSideMessage">
+                                        {{serverSideMessage}}
+                                   </div>
+                                   <div class="form-group">
+                                        <label>User ID</label>
+                                        <div class="group-input">
+                                             <input type="text" class="form-control" formControlName="username"/>
+                                             <small
+                                                  [hidden]="formObject.controls.username.valid || formObject.controls.username.untouched"
+                                                  class="required">
+                                                  UserID is required
+                                             </small>
+                                        </div>
+                                   </div>
+
+                                   <div class="form-group">
+                                        <label>Password</label>
+                                        <div class="group-input password-holder">
+                                             <input [type]="showPassword ? 'text' : 'password'" class="form-control" formControlName="password"/>
+                                             <span *ngIf="!showPassword" (click)="showPasswordFn()">Show</span>
+                                             <span *ngIf="showPassword" (click)="showPasswordFn()">Hide</span>
+                                             <small
+                                                  [hidden]="formObject.controls.password.valid || formObject.controls.password.untouched"
+                                                  class="required">
+                                                  Password is required
+                                             </small>
+                                        </div>
+                                   </div>
+                                   <!-- <a href="javascript:;" class="forget-link" [routerLink]="['/forget-pass']">I forget my password</a> -->
+                                   
+
+                                   <button type="submit" class="btn btn-default submit-button" [disabled]="formObject.invalid">Login</button>
+                              </form>
+                         </div>
+                         <img src="assets/images/efinance-logo.png" class="efinance-logo" alt="img">
+                    </div>
+               </div>
+          </div>
+     </div>
+</div>

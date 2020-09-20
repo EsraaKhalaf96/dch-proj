@@ -1,0 +1,46 @@
+<div class="pageMainTitle">
+     <h3>
+          Account Settings
+     </h3>
+</div>
+<div class="account-setting-page">
+     <div class="left">
+          <div class="box-header">
+               <a href="javascript:;">
+                    <i class="zmdi zmdi-chevron-left"></i>
+                    <span>Back to Account</span>
+               </a>
+               <div class="user-details">
+                    <div class="shortName">
+                         {{userShortName}}
+                    </div>
+                    <div class="info">
+                         <h3>{{userDisplayName}}</h3>
+                         <h5>Personal Setting</h5>
+                    </div>
+               </div>
+          </div>
+          <div class="box-side-menu">
+               <ul class="list-unstyled">
+                    <li [routerLink]="['/admin/account-settings/profile']" routerLinkActive="active">
+                         <a href="javascript:;">Profile</a>
+                    </li>
+                    <li [routerLink]="['/admin/account-settings/change-password']" routerLinkActive="active">
+                         <a href="javascript:;">Change Password</a>
+                    </li>
+                    <!-- <li>
+                         <a href="javascript:;">Notifications</a>
+                    </li>
+                    <li>
+                         <a href="javascript:;">Security and Login</a>
+                    </li>
+                    <li>
+                         <a href="javascript:;">System Settings</a>
+                    </li> -->
+               </ul>
+          </div>
+     </div>
+     <div class="right">
+          <router-outlet></router-outlet>
+     </div>
+</div>

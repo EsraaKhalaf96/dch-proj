@@ -1,0 +1,306 @@
+﻿.overlay {
+  position: fixed;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba($dark, 0.5);
+  display: none;
+  z-index: 999;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  margin: 10px 10px 0 10px;
+  padding: 10px 0;
+  position: relative;
+
+  .btn-menu {
+    @include transition(all 0.5s);
+    border: 0;
+    background: $transparent-bg;
+    line-height: 15px;
+    opacity: 1;
+    padding: 3px 10px;
+    position: absolute;
+    right: -24px;
+    top: 10px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0px 0px 3px 1px #c6c5c5;
+
+    i {
+      font-size: 22px;
+    }
+
+    &:hover {
+      opacity: 1;
+      cursor: pointer;
+    }
+  }
+  a {
+    margin-left: 3px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+
+    img {
+      width: 28px;
+      height: 28px;
+      margin-top: 6px;
+    }
+
+    span {
+      font-size: 18px;
+      color: #ffffff;
+      font-family: Roboto-regular;
+      letter-spacing: 0.5px;
+      line-height: 15px;
+      padding-top: 8px;
+
+      small {
+        display: block;
+        color: #d8d8d8;
+        font-size: 11px;
+        font-family: Roboto-light;
+      }
+    }
+  }
+  span {
+    font-size: $font-size + 4px;
+    color: $grey-800;
+  }
+}
+
+.sidebar {
+  @include transition(all 0.5s);
+  @extend .inlineblock;
+  font-family: $body-font-family;
+  width: 250px;
+  height: calc(100vh - 0px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  box-shadow: none;
+  z-index: 10;
+  background: #050d2e;
+
+  @media only screen and (max-width: $break-small - 1px) {
+    left: -250px;
+  }
+
+  .legal {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    border-top: 1px solid $grey-200;
+    padding: 15px;
+    overflow: hidden;
+  }
+  .user-info {
+    @extend .p-b-0;
+    @extend .m-b-15;
+    @extend .align-center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid $grey-300;
+
+    .image {
+      img {
+        @include border-radius(8px);
+        width: 50px;
+        vertical-align: bottom !important;
+        border: 3px solid $white;
+        box-shadow: 0px 5px 5px 0px rgba($dark, 0.2);
+      }
+    }
+    .detail {
+      h4 {
+        @extend .m-t-0;
+        @extend .m-b-0;
+        font-size: 20px;
+      }
+    }
+  }
+  .menu {
+    position: relative;
+
+    .search-box {
+      position: relative;
+      margin: 30px 0 10px 0;
+      input {
+        width: 90%;
+        margin: auto;
+        padding-right: 27px;
+      }
+      i {
+        position: absolute;
+        right: 20px;
+        top: 12px;
+        color: #8792ab;
+      }
+    }
+
+    .list {
+      @extend .p-l-0;
+      list-style: none;
+      margin: 0 10px;
+
+      li {
+        .main-link{
+          cursor: pointer;
+          &.active{
+            
+              background-color: #e6001a;
+              border-radius: 3px;
+              i {
+                color: #fff;
+              }
+              span {
+                color: #fff;
+              }
+            
+          }
+        }
+        
+      }
+
+      .menu-toggle {
+        &:after,
+        &:before {
+          @include transform(scale(0));
+          @include transition(all 0.5s);
+          font-size: $font-size + 2px;
+          position: absolute;
+          top: calc(50% - 11px);
+          right: 17px;
+          font-family: "Material-Design-Iconic-Font";
+        }
+        &:before {
+          content: "\f2fb";
+          @include transform(scale(1));
+        }
+        &:after {
+          content: "\f2f9";
+          @include transform(scale(0));
+        }
+      }
+
+      .menu-toggle.toggled {
+        background-color: #e6001a;
+        border-radius: 3px;
+        i {
+          color: #fff;
+        }
+        span {
+          color: #fff;
+        }
+        &:before {
+          content: "\f2f9";
+          @include transform(scale(0));
+          font-family: "Material-Design-Iconic-Font";
+        }
+
+        &:after {
+          @include transform(scale(1));
+        }
+      }
+
+      a {
+        @extend .displayblock;
+        color: #d8d8d8;
+        position: relative;
+        padding: 10px 10px;
+        font-family: Roboto-medium;
+        font-size: 15px;
+
+        &:hover,
+        &:active,
+        &:focus {
+          text-decoration: none !important;
+          i {
+            @include transform(rotate(-20deg));
+          }
+        }
+        i {
+          @include transition(all 0.5s);
+          @extend .align-center;
+          width: 16px;
+        }
+        small {
+          position: absolute;
+          top: calc(50% - 7.5px);
+          right: 15px;
+        }
+        span {
+          margin: 0 0 0 12px;
+        }
+      }
+
+      .ml-menu {
+        @extend .p-l-0;
+        list-style: none;
+        display: none;
+        background-color: #1e2543;
+
+        span {
+          font-weight: $font-weight-400;
+          margin: 3px 0 1px 6px;
+        }
+
+        li {
+          a {
+            font-size: $font-size + 2px;
+            padding-left: 40px;
+            padding-top: 7px;
+            padding-bottom: 7px;
+
+            // &:before {
+            //     font-size: $font-size;
+            //     color: $grey-500;
+            //     content: "\f30f";
+            //     position: absolute;
+            //     left: 14px;
+            //     font-family: "Material-Design-Iconic-Font";
+            //     top: 8px;
+            // }
+
+            &.active {
+              background-color: #2a314d;
+              position: relative;
+
+              &:before {
+                content: "";
+                width: 6px;
+                height: 6px;
+                background: red;
+                border-radius: 50%;
+                display: block;
+                position: absolute;
+                left: 25px;
+                top: 14px;
+              }
+            }
+          }
+
+          &.active {
+            a.toggled:not(.menu-toggle) {
+              // font-weight: $font-weight-700;
+            }
+          }
+        }
+      }
+    }
+
+    .progress-container {
+      margin: 12px;
+    }
+  }
+  &.open {
+    left: 0;
+    @include box-shadow(0px 5px 15px rgba($dark, 0.3));
+  }
+}
